@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Sortable</title>
+    <link rel="stylesheet" href="./assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+  </head>
+
+  <body>
+
+    <div id="list-holder"></div>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span id="closeModal" class="close">&times;</span>
+        <div class="buttons">
+          <button id="renameItemButton">Rename</button>
+          <button id="deleteItemButton">Delete</button>
+        </div>
+
+        <div class="renameForm">
+          <input id="renameInput" type="text" name="itemName">
+          <button id="saveNewName"><i class="fas fa-check"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div id="errorModal" class="modal">
+      <div class="modal-content">
+        <span id="closeModal" class="close">&times;</span>
+
+        <div id="errorMessage"></div>
+      </div>
+    </div>
+
+    <script src="./assets/js/fontawesome-all.min.js"></script>
+    <script src="./assets/js/jquery.js"></script>
+    <script src="./assets/js/jquery-ui.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

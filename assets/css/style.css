@@ -1,0 +1,213 @@
+body {
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+#list-holder .singleCategory {
+  position: relative;
+  margin-right: 1px;
+  width: 250px;
+}
+
+#list-holder ul.connectedSortable {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  min-height: 50px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+#list-holder ul.connectedSortable li {
+  padding: 3px 5px;
+  min-height: 20px;
+  cursor: all-scroll;
+  position: relative;
+}
+
+.droppable {
+  position: absolute;
+  height: 100%;
+  background-color: #F3C668;
+  width: 98%;
+  top: 50%;
+  opacity: 0;
+  transform: translateY(-50%);
+}
+
+.droppable:hover {
+  opacity: 0.5;
+}
+
+#list-holder ul.connectedSortable li.opened:after {
+  content: '';
+  position: absolute;
+  right: 15px;
+  bottom: 50%;
+  transform: translateY(50%);
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 6px solid black;
+}
+
+#list-holder ul.connectedSortable li.selected:after {
+  border-left: 6px solid white;
+}
+
+#list-holder ul.connectedSortable li > svg {
+  padding-right: 10px;
+}
+
+#list-holder {
+  display: flex;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+#list-holder ul.connectedSortable .selected {
+  background-color: #F3C668;
+  color: white;
+}
+
+#list-holder ul.connectedSortable .selected svg {
+  color: white;
+}
+
+#list-holder ul.connectedSortable .nestedLength {
+  font-size: 80%;
+  margin-left: 10px;
+  opacity: 0.8;
+}
+
+#list-holder .title {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  background-color: #4D7AAD;
+  color: white;
+  padding: 5px 10px;
+}
+
+#list-holder .title > div {
+  width: 100%;
+}
+
+#list-holder .title button.showInput {
+  margin-right: 10px;
+  background-color: transparent;
+  border: none;
+  height: 100%;
+  width: 100%;
+  color: white;
+}
+
+#list-holder .title button.showInput svg {
+  margin-right: 15px;
+}
+
+#list-holder .title button.cancelCategory {
+  color: rgba(255, 0, 0, .6);
+}
+
+#list-holder .title input {
+  width: 70%;
+}
+
+#list-holder .position-changed {
+  display: none;
+  position: absolute;
+  right: 30px;
+  height: 100%;
+  bottom: 50%;
+  transform: translateY(50%);
+  background-color: transparent;
+  cursor: url('../img/times.png'), auto;
+  border: none;
+}
+
+#list-holder .changed .position-changed {
+  display: block;
+}
+
+/* ----------- MODAL ---------- */
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+}
+
+.modal button {
+  background-color: #4D7AAD;
+  color: white;
+  border: none;
+  padding: 3px 5px;
+}
+
+.modal .modal-content {
+  background-color: #fefefe;
+  margin: 150px auto;
+  padding: 10px 20px;
+  border: 1px solid #888;
+  width: 400px; /* Could be more or less, depending on screen size */
+}
+
+.modal .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal .close:hover,
+.modal .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal .buttons {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.modal .buttons button:last-child {
+  background-color: rgba(255, 0, 0, .8);
+}
+
+.modal  .renameForm {
+  display: none;
+  text-align: center;
+}
+
+.modal  .renameForm input {
+  width: 60%;
+}
+.modal .renameForm button {
+  height: 100%;
+}
+
+#errorMessage {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 600;
+}
